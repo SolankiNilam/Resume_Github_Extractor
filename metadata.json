@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Resume GitHub Extractor - Vignat",
+  "description": "An application to extract a GitHub profile link from a PDF resume, fetch the user's public GitHub details, and display them in a beautiful UI.",
+  "requestFramePermissions": []
+}

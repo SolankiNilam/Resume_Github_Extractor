@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitProfile AI - GitHub Insights From Your Resume</title>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="GitProfile AI" />
+    <meta property="og:description" content="Turn your resume into beautiful, interactive GitHub profile insights. Our AI automatically extracts your profile, analyzes repositories, and visualizes your development journey." />
+    <meta property="og:image" content="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              background: {
+                DEFAULT: '#FFFFFF',
+                dark: '#0D0C12',
+              },
+              surface: {
+                DEFAULT: '#F8FAFC',
+                dark: 'rgba(28, 25, 38, 0.5)',
+              },
+              'brand-purple': '#8B5CF6',
+              'brand-pink': '#EC4899',
+              'text-primary': {
+                DEFAULT: '#111827',
+                dark: '#F8FAFC',
+              },
+              'text-secondary': {
+                DEFAULT: '#6B7280',
+                dark: '#A1A1AA',
+              },
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'slide-up': 'slideUp 0.5s ease-in-out forwards',
+              'glow': 'glow 4s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'float-bg': 'float-bg 30s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              glow: {
+                '0%, 100%': { 'box-shadow': '0 0 20px -5px #8B5CF6' },
+                '50%': { 'box-shadow': '0 0 20px 5px #EC4899' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              'float-bg': {
+                '0%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+                '25%': { transform: 'translate(20px, -30px) scale(1.1) rotate(10deg)' },
+                '50%': { transform: 'translate(-10px, 10px) scale(1) rotate(0deg)' },
+                '75%': { transform: 'translate(15px, 20px) scale(1.1) rotate(-10deg)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      // Prevents Flash of Unstyled Content (FOUC) for dark mode
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "marked": "https://cdn.jsdelivr.net/npm/marked@13.0.2/lib/marked.esm.js"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-text-primary dark:text-text-primary-dark font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
